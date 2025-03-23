@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { UserContext } from '../context/user.context'
 import axios from "../config/axios"
+import { useNavigate } from 'react-router-dom'
 
 const Home = () =>{
 
@@ -8,6 +9,8 @@ const Home = () =>{
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [ projectName, setProjectName] = useState(null)
     const [ project, setProject ] = useState([])
+
+    const navigate = useNavigate()
 
     function createProject(e){
         e.preventDefault()
